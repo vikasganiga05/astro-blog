@@ -16,3 +16,7 @@ github:
     addCheck: true
     addComment: false
     addBadge: true
+
+vscode:
+  extensions:
+    - astro-build.astro-vscode
