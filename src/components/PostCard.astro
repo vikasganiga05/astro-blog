@@ -5,7 +5,10 @@ import Link from "./Link.astro";
 
 import { slugify, formatDate } from "../scripts/utils";
 
-const { frontmatter, url } = Astro.props;
+const { frontmatter, url, tagType } = Astro.props;
+
+const Tag = tagType;
+
 const { title, description, image, date, category, author } = frontmatter;
 ---
 
@@ -29,9 +32,9 @@ const { title, description, image, date, category, author } = frontmatter;
   </a>
   <div class="content">
     <div>
-      <h2 class="h3">
+      <Tag class="h3">
         <a href={url}>{title}</a>
-      </h2>
+      </Tag>
       <small>
         by <a href={`/author/${slugify(author)}/`}>{author}</a> • {
           formatDate(date)
